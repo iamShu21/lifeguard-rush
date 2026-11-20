@@ -11,8 +11,11 @@ Built with [Phaser 3](https://phaser.io) (JavaScript) and [Vite](https://vitejs.
 | Action | Keys |
 | --- | --- |
 | Move | WASD or arrow keys (you move slower in the water) |
+| Hand sunscreen to a sunburned sunbather (SUN marker) | Walk next to them, press SPACE |
+| Rescue a drifting swimmer (HELP marker) | Swim next to them, hold SPACE, then carry them back to the sand |
 
-More controls arrive as features are added.
+Each problem has a ring timer. Fix it before the ring empties, or the beach loses Fun.
+Survive until sunset with Fun above zero. The day lasts 3 minutes.
 
 ## Running it on your computer
 
@@ -33,8 +36,10 @@ Zip the **contents** of `dist/` (so `index.html` is at the top of the zip) and u
 | `src/main.js` | Starts Phaser with the game settings and the list of scenes |
 | `src/config.js` | All tuning numbers and colors in one place (speeds, beach layout) |
 | `src/scenes/BootScene.js` | Prepares the graphics, then starts the beach |
-| `src/scenes/BeachScene.js` | The main gameplay scene |
+| `src/scenes/BeachScene.js` | One beach day: spawning problems, helping, Fun Meter, score, sun timer, results |
+| `src/scenes/TitleScene.js` | Title screen with how-to-play instructions |
 | `src/objects/Player.js` | The lifeguard: reads the keys and moves, slower in water |
+| `src/objects/Beachgoer.js` | A sunbather or swimmer, their problem and its ring timer |
 
 ## Credits
 
