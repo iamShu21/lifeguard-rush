@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { BEACH, EVENTS, COLORS } from '../config.js';
+import { drawTimerRing } from '../utils/ring.js';
 
 // A person at the beach. Most of the time they are fine. When the scene
 // gives them a problem (startProblem), a warning marker appears above them
@@ -79,16 +80,7 @@ export default class Beachgoer extends Phaser.GameObjects.Sprite {
     const x = this.x;
     const y = this.y - 34;
     const left = this.problem.timeLeft / this.problem.total; // 1 = full time left
-    const danger = left < 0.35;
-
-    this.ring.clear();
-    this.ring.fillStyle(danger ? 0xd62828 : 0x222222, 0.85).fillCircle(x, y, 20);
-    // The ring empties as time runs out.
-    this.ring.lineStyle(4, danger ? 0xffd23f : 0x7ee081);
-    this.ring.beginPath();
-    this.ring.arc(x, y, 18, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * left, false);
-    this.ring.strokePath();
-
+    drawTimerRing(this.ring, x, y, left, this.scene.time.now);
     this.icon.setPosition(x, y).setFontSize(this.problem.type === 'drift' ? 11 : 12);
   }
 

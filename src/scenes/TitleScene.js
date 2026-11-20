@@ -13,28 +13,31 @@ export default class TitleScene extends Phaser.Scene {
     this.add.rectangle(cx, GAME_HEIGHT * 0.8, GAME_WIDTH, GAME_HEIGHT * 0.4, COLORS.sand);
     this.add.circle(GAME_WIDTH - 120, 90, 46, 0xffd23f);
 
-    this.add.text(cx, 110, 'LIFEGUARD RUSH', {
+    this.add.text(cx, 80, 'LIFEGUARD RUSH', {
       fontFamily: 'monospace', fontSize: '56px', fontStyle: 'bold',
       color: '#ffffff', stroke: '#e8352b', strokeThickness: 8,
     }).setOrigin(0.5);
 
     const howTo = [
       'You are the only lifeguard on a busy summer beach.',
-      'Help everyone before the Fun Meter runs out!',
+      'Keep everyone happy until sunset!',
       '',
       'Move ............... WASD or arrow keys',
+      'Dash ............... SHIFT',
       'Sunburn (SUN) ...... walk over, press SPACE',
-      'Drifting (HELP) .... swim out, hold SPACE,',
+      'Drifting (HELP) .... swim out, TAP SPACE fast,',
       '                     carry them to the sand',
+      'Seagulls ........... run into them, or',
+      '                     Q to blow your whistle',
       '',
-      'Survive until sunset.',
+      'Chain fixes for a COMBO. Last 25s: RUSH HOUR!',
     ];
-    this.add.text(cx, 300, howTo.join('\n'), {
-      fontFamily: 'monospace', fontSize: '18px', color: '#0d1b2a', lineSpacing: 4,
+    this.add.text(cx, 310, howTo.join('\n'), {
+      fontFamily: 'monospace', fontSize: '16px', color: '#0d1b2a', lineSpacing: 3,
       backgroundColor: '#ffffffcc', padding: { x: 18, y: 14 },
     }).setOrigin(0.5);
 
-    const start = this.add.text(cx, GAME_HEIGHT - 50, 'Press SPACE to start', {
+    const start = this.add.text(cx, GAME_HEIGHT - 32, 'Press SPACE to start', {
       fontFamily: 'monospace', fontSize: '24px', fontStyle: 'bold', color: '#e8352b',
     }).setOrigin(0.5);
     this.tweens.add({ targets: start, alpha: 0.3, duration: 600, yoyo: true, repeat: -1 });

@@ -43,6 +43,20 @@ export default class BootScene extends Phaser.Scene {
     g.fillStyle(COLORS.skin).fillCircle(14, 14, 7);
     g.fillStyle(COLORS.swimCap).fillRect(7, 7, 14, 5);
     g.generateTexture('swimmer', 28, 28);
+    g.clear();
+
+    // Seagull: white body, grey wing, orange beak.
+    g.fillStyle(COLORS.gull).fillEllipse(14, 12, 22, 12);
+    g.fillStyle(COLORS.gull).fillCircle(24, 8, 5);
+    g.fillStyle(COLORS.gullWing).fillTriangle(8, 10, 18, 10, 12, 0);
+    g.fillStyle(COLORS.beak).fillTriangle(28, 7, 28, 11, 33, 9);
+    g.fillStyle(0x000000).fillCircle(25, 7, 1.2);
+    g.generateTexture('gull', 34, 20);
+    g.clear();
+
+    // A small white dot used for particle bursts.
+    g.fillStyle(0xffffff).fillCircle(4, 4, 4);
+    g.generateTexture('dot', 8, 8);
 
     g.destroy();
   }
