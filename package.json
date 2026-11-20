@@ -1,0 +1,18 @@
+{
+  "name": "lifeguard-rush",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lifeguard Rush - a summertime beach game for CSD Game Jamathon 2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.19"
+  }
+}
